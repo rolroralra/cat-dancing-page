@@ -1,0 +1,193 @@
+/* Dancing Cat Container Styles */
+.dancing-cat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+}
+
+.cat-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+  perspective: 1000px;
+}
+
+.cat-image {
+  width: 250px;
+  height: 250px;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+  transition: filter 0.3s ease;
+}
+
+/* Dancing Animation */
+.cat-image.dancing {
+  animation: dance 2s ease-in-out infinite;
+}
+
+@keyframes dance {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  10% {
+    transform: translateY(-30px) rotate(-5deg) scale(1.05);
+  }
+  20% {
+    transform: translateY(-10px) rotate(5deg) scale(0.95);
+  }
+  30% {
+    transform: translateY(-40px) rotate(-8deg) scale(1.08);
+  }
+  40% {
+    transform: translateY(-5px) rotate(8deg) scale(0.92);
+  }
+  50% {
+    transform: translateY(-35px) rotate(0deg) scale(1.1);
+  }
+  60% {
+    transform: translateY(-15px) rotate(-10deg) scale(0.98);
+  }
+  70% {
+    transform: translateY(-45px) rotate(10deg) scale(1.05);
+  }
+  80% {
+    transform: translateY(-20px) rotate(-5deg) scale(0.95);
+  }
+  90% {
+    transform: translateY(-25px) rotate(5deg) scale(1.02);
+  }
+}
+
+/* Control Button Styles */
+.control-button {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Hover Effects */
+.cat-image:hover {
+  filter: drop-shadow(0 15px 30px rgba(255, 255, 255, 0.2));
+}
+
+/* Animation Performance Optimization */
+.cat-image {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cat-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .cat-wrapper {
+    margin: 2rem 0;
+  }
+
+  .control-button {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+  }
+
+  @keyframes dance {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg) scale(1);
+    }
+    10% {
+      transform: translateY(-20px) rotate(-5deg) scale(1.05);
+    }
+    20% {
+      transform: translateY(-8px) rotate(5deg) scale(0.95);
+    }
+    30% {
+      transform: translateY(-25px) rotate(-8deg) scale(1.08);
+    }
+    40% {
+      transform: translateY(-5px) rotate(8deg) scale(0.92);
+    }
+    50% {
+      transform: translateY(-22px) rotate(0deg) scale(1.1);
+    }
+    60% {
+      transform: translateY(-12px) rotate(-10deg) scale(0.98);
+    }
+    70% {
+      transform: translateY(-28px) rotate(10deg) scale(1.05);
+    }
+    80% {
+      transform: translateY(-15px) rotate(-5deg) scale(0.95);
+    }
+    90% {
+      transform: translateY(-18px) rotate(5deg) scale(1.02);
+    }
+  }
+}
+
+/* Responsive Design - Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .cat-image {
+    width: 220px;
+    height: 220px;
+  }
+
+  .control-button {
+    font-size: 1.1rem;
+    padding: 0.9rem 2.5rem;
+  }
+}
+
+/* Responsive Design - Desktop Large */
+@media (min-width: 1440px) {
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .cat-image {
+    width: 300px;
+    height: 300px;
+  }
+
+  .control-button {
+    font-size: 1.3rem;
+    padding: 1.2rem 3.5rem;
+  }
+}
+
+/* Touch Device Support */
+@media (hover: none) and (pointer: coarse) {
+  .cat-image:hover {
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+  }
+
+  .control-button {
+    padding: 1.2rem 3rem;
+    font-size: 1.3rem;
+  }
+}
